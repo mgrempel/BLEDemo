@@ -31,19 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
     private BluetoothManager bluetoothManager;
     private BluetoothAdapter bluetoothAdapter;
-    private BluetoothLeAdvertiser advertiser;
 
-    //Bad practice, but my garbage code will suffice for the example.
     //BLE advertiser stuff
     private AdvertiseSettings settings;
-//    private final String uuid = UUID.randomUUID().toString();
-//    private ParcelUuid parcelUuid;
+    private BluetoothLeAdvertiser advertiser;
     private AdvertiseData advertiseData;
     private AdvertiseCallback callBack;
 
     //BLE scanner stuff
     private BluetoothLeScanner scanner;
-    private Handler handler;
     private ScanCallback scanCallback;
     private ScanSettings scanSettings;
 
@@ -208,7 +204,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        //My house is full of bluetooth noise, so lets add a filter.
         //Let's configure our scan settings
         scanSettings = new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY).build();
     }
